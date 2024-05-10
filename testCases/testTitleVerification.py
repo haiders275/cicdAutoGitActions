@@ -7,7 +7,7 @@ class TestGoogleSearchField:
     log = LogGen.loggen()
 
     @allure.severity(allure.severity_level.NORMAL)
-    def test_search_field_presence(self, setup_web):
+    def test_title_Page(self, setup_web):
         self.driver = setup_web
         self.driver.maximize_window()
         self.page = GooglePage(self.driver)

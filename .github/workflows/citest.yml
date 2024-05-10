@@ -30,7 +30,7 @@ jobs:
           wget
           http://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
 
-          unzip chromedriver_linux64.zip -d /tmp
+          unzip chromedriver_linux64.zip
 
           chmod +x chromedriver
           mkdir -p $HOME/bin  # Create directory if not exists

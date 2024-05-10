@@ -14,6 +14,19 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+      - name: Install ChromeDriver
+        run: >
+          LATEST=$(wget -q -O -
+          http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
+
+          wget
+          http://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
+
+          unzip chromedriver_linux64.zip
+
+          chmod +x chromedriver
+
+          sudo mv chromedriver /usr/local/bin
       - name: Run tests
         run: |
           pytest --alluredir=./Reports testCases/testGoogleSearch.py

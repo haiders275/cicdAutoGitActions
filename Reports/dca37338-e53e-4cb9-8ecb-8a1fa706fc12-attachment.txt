@@ -1,0 +1,1 @@
+[32mINFO    [0m root:webApp_Page.py:31 Search Field displayed. Test Passed.

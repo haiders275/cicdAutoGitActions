@@ -14,6 +14,14 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+
+      - name: Install Chrome browser
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt install -y ./google-chrome-stable_current_amd64.deb
+      
       - name: Install ChromeDriver
         run: >
           LATEST=$(wget -q -O -
@@ -22,11 +30,13 @@ jobs:
           wget
           http://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
 
-          unzip chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip -d /tmp
 
-          chmod +x chromedriver
+          #chmod +x chromedriver
+          mv /tmp/chromedriver ./chromeDriver
 
-          sudo mv chromedriver /usr/local/bin
+          # Add custom directory to system PATH
+          # echo "export PATH=\$PATH:/custom/path/to" >> $GITHUB_ENV
       
       - name: Run tests
         run: |

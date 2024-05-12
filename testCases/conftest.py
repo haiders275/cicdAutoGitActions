@@ -17,7 +17,7 @@ def setup_web():
     ]
 
     for option in options:
-    chrome_options.add_argument(option)
+        chrome_options.add_argument(option)
 
     
     driver = webdriver.Chrome(options = chrome_options)

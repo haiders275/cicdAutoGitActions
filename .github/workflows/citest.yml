@@ -24,7 +24,7 @@ jobs:
         run: sudo apt-get install xvfb
 
       - name: Running the Python script
-        run: python testCases/testCase.py
+        run: pytest testCases/testCase.py --alluredir="./Reports"
       
 
 

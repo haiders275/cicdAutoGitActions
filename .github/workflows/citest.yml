@@ -30,7 +30,7 @@ jobs:
         run: sudo apt-get install xvfb
 
       - name: Running the Python script
-        run: pytest --alluredir=Logs
+        run: pytest -v -s --alluredir=Logs testCases/testTitleVerification.py
         # testCases/testCase.py --alluredir="./chromeDriver"
 
 

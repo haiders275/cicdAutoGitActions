@@ -25,7 +25,7 @@ jobs:
         run: sudo apt-get install xvfb
 
       - name: Running the Python script
-        run: python testCases/testCase.py --alluredir="./Reports"
+        run: python testCases/testCase.py --alluredir="./chromeDriver"
       
 
 

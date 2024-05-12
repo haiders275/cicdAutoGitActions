@@ -34,7 +34,7 @@ jobs:
 
           unzip chromedriver_linux64.zip
 
-          chmod +x chromedriver
+          # chmod +x chromedriver
           mkdir -p $HOME/bin  # Create directory if not exists
           mv chromedriver $HOME/bin
           echo "export PATH=$HOME/bin:\$PATH" >> $GITHUB_ENV   

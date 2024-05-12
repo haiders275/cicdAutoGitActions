@@ -14,18 +14,42 @@ jobs:
         with:
           python-version: '3.12'
       - name: Installing package list
-        run: pip install -r requirements.txt    
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt    
       - name: Removing previous chrome instances on runner 
         run: sudo apt purge google-chrome-stable  
         
        # Need to fetch reqs if needed
+      - name: Install plugin
+        run: pip install pytest-github-actions-annotate-failures 
+
       - name: Installing all necessary packages
         run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay
       - name: Install xvfb
         run: sudo apt-get install xvfb
 
       - name: Running the Python script
-        run: python testCases/testCase.py --alluredir="./chromeDriver"
+        run: pytest --alluredir=Logs --browser remote
+        # testCases/testCase.py --alluredir="./chromeDriver"
+
+
+      - name: Allure results
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        id: allure-report
+        with:
+          allure_results: allure-results
+          allure_report: allure-report 
+          gh_pages: gh-pages
+          allure_history: allure-history
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history
       
 
 

@@ -9,7 +9,7 @@ from selenium.webdriver.chrome.options import Options
 def setup_web(request):
     options=Options()
     options.add_argument("--headless")
-    driver=webdriver.Chrome(service=Service(ChromeDriverManager().install(), options=options))
+    driver=webdriver.Chrome(options=options))
     request.cls.driver=driver
 
     yield driver

@@ -12,7 +12,7 @@ def setup_web(request):
     driver=webdriver.Chrome(service=Service(ChromeDriverManager().install(), options=options))
     request.cls.driver=driver
 
-    yield
+    yield driver
     driver.quit()
 
 # @pytest.fixture()

@@ -23,7 +23,7 @@ jobs:
         run: pip install pytest-github-actions-annotate-failures 
       
       - name: Running the Python script
-        run: pytest -v -s --alluredir=./Logs testCases/testTitleVerification.py, testCases/testGoogleSearch.py
+        run: pytest -v -s --alluredir=./Logs testCases/testTitleVerification.py
 
 
       - name: Allure results

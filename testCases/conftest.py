@@ -5,7 +5,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 import chromedriver_autoinstaller
 
-@pytest.fixture(autouse=True)
+@pytest.fixture()
 def setup_web(request):
     options=Options()
     options.add_argument("--headless")

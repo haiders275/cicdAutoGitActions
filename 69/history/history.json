@@ -1,1 +1,0 @@
-{"277a24be755b69b83c82ffb83bb03bec":{"statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1},"items":[{"uid":"f17f5f1e2e4853ff","reportUrl":"https://haiders275.github.io/cicdAutoGitActions/69//#testresult/f17f5f1e2e4853ff","status":"passed","time":{"start":1715613740570,"stop":1715613741217,"duration":647}}]}}

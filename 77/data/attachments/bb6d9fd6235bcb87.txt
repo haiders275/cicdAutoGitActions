@@ -1,0 +1,3 @@
+INFO     root:testGoogleSearch.py:13 Chrome Webdriver initialized.
+INFO     root:testGoogleSearch.py:17 Google page opened.
+INFO     root:webApp_Page.py:31 Search Field displayed. Test Passed.

@@ -18,8 +18,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install --upgrade webdriver_manager
           pip install -r requirements.txt    
-      - name: Removing previous chrome instances on runner 
-        run: sudo apt purge google-chrome-stable  
+      # - name: Removing previous chrome instances on runner 
+        # run: sudo apt purge google-chrome-stable  
         
        # Need to fetch reqs if needed
       - name: Install plugin
@@ -40,10 +40,10 @@ jobs:
       #     mv chromedriver $HOME/bin
       #     echo "export PATH=$HOME/bin:\$PATH" >> $GITHUB_ENV   
 
-      - name: Installing all necessary packages
-        run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay
-      - name: Install xvfb
-        run: sudo apt-get install xvfb
+      # - name: Installing all necessary packages
+        # run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay
+      # - name: Install xvfb
+        # run: sudo apt-get install xvfb
 
       - name: Running the Python script
         run: pytest -v -s --alluredir=./Logs testCases/testTitleVerification.py

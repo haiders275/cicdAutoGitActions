@@ -45,7 +45,7 @@ jobs:
         run: sudo apt-get install xvfb
 
       - name: Running the Python script
-        run: pytest -v -s --alluredir=Logs testCases/testTitleVerification.py
+        run: pytest -v -s --alluredir=./Logs testCases/testTitleVerification.py
         # testCases/testCase.py --alluredir="./chromeDriver"
 
 
@@ -63,7 +63,7 @@ jobs:
         if: always()
         uses: peaceiris/actions-gh-pages@v2
         with:
-          github_token: ${{ secrets.PASS_TOKEN }}
+          personal_token: ${{ secrets.PASS_TOKEN }}
           
           # PERSONAL_TOKEN: ${{ secrets.PASS_TOKEN }} 
           publish_branch: gh_pages

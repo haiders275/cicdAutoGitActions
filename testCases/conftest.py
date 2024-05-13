@@ -6,7 +6,7 @@ import chromedriver_autoinstaller
 def setup_web(request):
     options=Options()
     options.add_argument("--headless")
-    driver=webdriver.Chrome(service=Service(ChromeDriverManager().install(), options=options)
+    driver=webdriver.Chrome(service=Service(ChromeDriverManager().install(), options=options))
     request.cls.driver=driver
 
     yield

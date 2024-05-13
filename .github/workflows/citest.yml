@@ -24,7 +24,7 @@ jobs:
       
       - name: Running the Python script
         run: pytest -v -s --alluredir=./Logs testCases/testGoogleSearch.py
-
+             pytest -v -s --alluredir=./Logs testCases/testTitleVerification.py
 
       - name: Allure results
         uses: simple-elf/allure-report-action@master

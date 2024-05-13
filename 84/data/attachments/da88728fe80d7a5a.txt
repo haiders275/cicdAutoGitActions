@@ -1,0 +1,2 @@
+INFO     root:webApp_Page.py:21 Test Passed.
+INFO     root:testTitleVerification.py:40 Title is verified.

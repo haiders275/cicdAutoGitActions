@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon May 13 18:18:39 GMT 2024","Mon May 13 18:18:39 GMT 2024","489","testCases","testTitleVerification","TestGoogleSearchField","","","test_title_Page",""
+"passed","Mon May 13 18:18:36 GMT 2024","Mon May 13 18:18:38 GMT 2024","2492","testCases","testGoogleSearch","TestGoogleSearchField","","","test_search_field_presence",""

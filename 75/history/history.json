@@ -1,1 +1,0 @@
-{"b85c60a995aab518303ab78591d86190":{"statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1},"items":[{"uid":"fabca8a181549280","reportUrl":"https://haiders275.github.io/cicdAutoGitActions/75//#testresult/fabca8a181549280","status":"passed","time":{"start":1715614633934,"stop":1715614634662,"duration":728}}]}}

@@ -18,36 +18,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install --upgrade webdriver_manager
           pip install -r requirements.txt    
-      # - name: Removing previous chrome instances on runner 
-        # run: sudo apt purge google-chrome-stable  
-        
-       # Need to fetch reqs if needed
+      
       - name: Install plugin
         run: pip install pytest-github-actions-annotate-failures 
       
-      # - name: Install ChromeDriver
-      #   run: >
-      #     LATEST=$(wget -q -O -
-      #     http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
-
-      #     wget
-      #     http://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
-
-      #     unzip chromedriver_linux64.zip
-
-      #     # chmod +x chromedriver
-      #     mkdir -p $HOME/bin  # Create directory if not exists
-      #     mv chromedriver $HOME/bin
-      #     echo "export PATH=$HOME/bin:\$PATH" >> $GITHUB_ENV   
-
-      # - name: Installing all necessary packages
-        # run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay
-      # - name: Install xvfb
-        # run: sudo apt-get install xvfb
-
       - name: Running the Python script
-        run: pytest -v -s --alluredir=./Logs testCases/testTitleVerification.py
-        # testCases/testCase.py --alluredir="./chromeDriver"
+        run: pytest -v -s --alluredir=./Logs
 
 
       - name: Allure results
@@ -65,57 +41,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v2
         env:
           PERSONAL_TOKEN: ${{ secrets.PASS_TOKEN }}
-          
-          # PERSONAL_TOKEN: ${{ secrets.PASS_TOKEN }} 
           PUBLISH_BRANCH: gh_pages
           PUBLISH_DIR: allure-history
       
 
-
-# name: Python Selenium CI Tests
-# 'on':
-#   - push
-# jobs:
-#   test:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v2
-#       - name: Set up Python
-#         uses: actions/setup-python@v3
-#         with:
-#           python-version: 3.12
-#       - name: Install dependencies
-#         run: |
-#           pip install -r requirements.txt
-
-#       - name: Install Chrome browser
-#         run: |
-#           sudo apt-get update
-#           sudo apt-get install -y wget
-#           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-#           sudo apt install -y ./google-chrome-stable_current_amd64.deb
-      
-#       - name: Install ChromeDriver
-#         run: >
-#           LATEST=$(wget -q -O -
-#           http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
-
-#           wget
-#           http://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
-
-#           unzip chromedriver_linux64.zip
-
-#           # chmod +x chromedriver
-#           mkdir -p $HOME/bin  # Create directory if not exists
-#           mv chromedriver $HOME/bin
-#           echo "export PATH=$HOME/bin:\$PATH" >> $GITHUB_ENV   
-          
-#       - name: Run tests
-#         run: |
-#           pytest --alluredir="./Reports" testCases/testGoogleSearch.py
-#       - name: Upload Allure report
-#         uses: actions/upload-artifact@v2
-#         with:
-#           name: allure-report
-#           path: ./Reports
